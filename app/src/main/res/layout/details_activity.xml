@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/hidden_card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8"
+        app:cardCornerRadius="@dimen/radius_4"
+        app:cardElevation="@dimen/elevation_6">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_marginRight="@dimen/margin_8"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/item_title_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carter_one"
+                android:padding="@dimen/margin_8"
+                android:gravity="center"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textColor="@color/colorPrimaryDark"
+                tools:text="@string/title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_price_details"
+                    style="@style/cardView_labels"
+                    android:text="@string/item_price" />
+
+                <TextView
+                    android:id="@+id/price"
+                    style="@style/cardView_values"
+                    tools:text="Price" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/quantity"
+                    style="@style/cardView_labels"
+                    android:text="@string/quantity" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/minus_button"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:text="@string/minus_symbol" />
+
+                    <TextView
+                        android:id="@+id/quantity_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingLeft="@dimen/padding_4"
+                        android:paddingRight="@dimen/padding_4"
+                        android:textSize="@dimen/text_size_18"
+                        tools:text="@string/quantity" />
+
+                    <Button
+                        android:id="@+id/plus_button"
+                        android:layout_width="50dp"
+                        android:layout_height="35dp"
+                        android:text="@string/plus_symbol" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carter_one"
+                android:padding="@dimen/margin_8"
+                android:gravity="center"
+                android:text="@string/supplier_underlined"
+                android:textAppearance="?android:textAppearanceLargeInverse"
+                android:textColor="@color/colorPrimaryDark" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_supName_details"
+                    style="@style/cardView_labels"
+                    android:text="@string/name" />
+
+                <TextView
+                    android:id="@+id/supplier_name"
+                    style="@style/cardView_values"
+                    tools:text="@string/name" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:layout_marginTop="@dimen/margin_8"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/item_supNumber_details"
+                    style="@style/cardView_labels"
+                    android:text="@string/number" />
+
+                <TextView
+                    android:id="@+id/supplier_number"
+                    style="@style/cardView_values"
+                    tools:text="@string/number" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/carter_one"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_gravity="center"
+                android:text="@string/order" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/edit"
+                    android:fontFamily="@font/carter_one"
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/edit"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/delete"
+                    android:layout_width="@dimen/zero_dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/carter_one"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/delete"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:id="@+id/done"
+                    android:layout_width="0dp"
+                    android:fontFamily="@font/carter_one"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:text="@string/done"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</ScrollView>
