@@ -93,23 +93,22 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
+                if (quantity > 0) {
+                    ItemDbHelper dbHelper = new ItemDbHelper(getApplicationContext());
+                    SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-                ItemDbHelper dbHelper = new ItemDbHelper(getApplicationContext());
-                final SQLiteDatabase database = dbHelper.getWritableDatabase();
+                    quantity--;
 
-                quantity -= 1;
+                    ContentValues values = new ContentValues();
+                    values.put(ItemEntry.COLUMN_ITEM_QUANTITY, quantity);
 
-                ContentValues values = new ContentValues();
-                values.put(ItemEntry.COLUMN_ITEM_QUANTITY, quantity);
-
-                String selection = ItemEntry._ID + "=?";
-                String[] selectionArgs = new String[]{String.valueOf(rowId)};
-                if (quantity == -1) {
-                    Toast.makeText(DetailsActivity.this, "No Stock Left ", Toast.LENGTH_SHORT).show();
-                } else {
+                    String selection = ItemEntry._ID + "=?";
+                    String[] selectionArgs = new String[]{String.valueOf(rowId)};
                     database.update(ItemEntry.TABLE_NAME, values, selection, selectionArgs);
+                    mQuantityText.setText(doubleToStringNoDecimal(quantity));
+                } else {
+                    Toast.makeText(DetailsActivity.this, "No Stock Left ", Toast.LENGTH_SHORT).show();
                 }
-                mQuantityText.setText(doubleToStringNoDecimal(quantity));
             }
         });
 
@@ -139,6 +138,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             public void onClick(View v) {
                 onBackPressed();
             }
+
         });
 
         // Set up the click listener for the Delete Button.

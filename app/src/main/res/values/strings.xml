@@ -93,11 +93,11 @@
 
     <string name="fill_in_the_fields">Please fill in all the fields or press Back to see your Inventory</string>
 
-    <string name="empty_title">Please fill in the title of the Item</string>
-    <string name="empty_price">Please fill in the price of the Item</string>
-    <string name="empty_quantity">Please fill in the quantity of the item</string>
-    <string name="empty_sup_name">Please fill in the Supplier\'s Name</string>
-    <string name="empty_sup_number">Please fill in the Supplier\'s phone</string>
+    <string name="empty_title">Please fill in the NAME of the Item</string>
+    <string name="empty_price">Please fill in the PRICE of the Item</string>
+    <string name="empty_quantity">Please fill in the Item QUANTITY</string>
+    <string name="empty_sup_name">Please fill in the Supplier\'s NAME</string>
+    <string name="empty_sup_number">Please fill in the Supplier\'s PHONE NUMBER</string>
     <string name="minus_symbol">-</string>
     <string name="plus_symbol">+</string>
 
