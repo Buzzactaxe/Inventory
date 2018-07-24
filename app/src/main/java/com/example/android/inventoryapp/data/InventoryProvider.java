@@ -163,7 +163,7 @@ public class InventoryProvider extends ContentProvider {
             throw new IllegalArgumentException("Item needs the suppliers Phone Number");
         }
 
-        SQLiteDatabase database = mDbHelper.getWritableDatabase();
+        SQLiteDatabase database = mDbHelper.getReadableDatabase();
 
 
         long id = database.insert(ItemEntry.TABLE_NAME, null, values);

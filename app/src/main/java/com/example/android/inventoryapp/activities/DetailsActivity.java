@@ -61,8 +61,8 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         mQuantityText = findViewById(R.id.quantity);
         mSuppNameText = findViewById(R.id.supplier_name);
         mSuppPhoneText = findViewById(R.id.supplier_number);
-       Button plusButton = findViewById(R.id.plus_button);
-        final Button minusButton = findViewById(R.id.minus_button);
+        Button plusButton = findViewById(R.id.plus_button);
+       final Button minusButton = findViewById(R.id.minus_button);
         Button orderButton = findViewById(R.id.order);
         Button editButton = findViewById(R.id.edit);
         Button doneButton = findViewById(R.id.done);
@@ -93,7 +93,6 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
-
 
                 ItemDbHelper dbHelper = new ItemDbHelper(getApplicationContext());
                 final SQLiteDatabase database = dbHelper.getWritableDatabase();
@@ -250,14 +249,14 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             // Read the item attributes from the Cursor for the current item
             String title = data.getString(titleColumnIndex);
             double price = data.getDouble(priceColumnIndex);
-            String quantity = data.getString(quantityColumnIndex);
+            quantity = data.getInt(quantityColumnIndex);
             rowId = data.getString(rowIndex);
             String supName = data.getString(supNameColumnIndex);
             supNumber = data.getString(supNumberColumnIndex);
 
             mNameText.setText(title);
             mPriceText.setText(Double.toString(price));
-            mQuantityText.setText(quantity);
+            mQuantityText.setText(Integer.toString(quantity));
             mSuppNameText.setText(supName);
             mSuppPhoneText.setText(supNumber);
         }
