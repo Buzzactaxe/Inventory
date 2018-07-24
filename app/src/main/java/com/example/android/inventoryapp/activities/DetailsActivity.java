@@ -62,7 +62,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         mSuppNameText = findViewById(R.id.supplier_name);
         mSuppPhoneText = findViewById(R.id.supplier_number);
        Button plusButton = findViewById(R.id.plus_button);
-        Button minusButton = findViewById(R.id.minus_button);
+        final Button minusButton = findViewById(R.id.minus_button);
         Button orderButton = findViewById(R.id.order);
         Button editButton = findViewById(R.id.edit);
         Button doneButton = findViewById(R.id.done);
@@ -93,6 +93,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
             @SuppressLint("SetTextI18n")
             @Override
             public void onClick(View v) {
+
 
                 ItemDbHelper dbHelper = new ItemDbHelper(getApplicationContext());
                 final SQLiteDatabase database = dbHelper.getWritableDatabase();

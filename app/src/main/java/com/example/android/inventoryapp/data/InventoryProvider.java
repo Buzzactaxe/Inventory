@@ -12,6 +12,8 @@ import android.util.Log;
 
 import com.example.android.inventoryapp.data.ItemContract.ItemEntry;
 
+import java.util.Objects;
+
 
 public class InventoryProvider extends ContentProvider {
 
@@ -139,7 +141,7 @@ public class InventoryProvider extends ContentProvider {
             throw new IllegalArgumentException("Item requires a name");
         }
 
-        Integer price = values.getAsInteger(ItemEntry.COLUMN_ITEM_PRICE);
+        Double price = values.getAsDouble(ItemEntry.COLUMN_ITEM_PRICE);
         if (price == null) {
             throw new IllegalArgumentException("Item needs a Price");
         }
@@ -161,7 +163,7 @@ public class InventoryProvider extends ContentProvider {
             throw new IllegalArgumentException("Item needs the suppliers Phone Number");
         }
 
-        SQLiteDatabase database = mDbHelper.getReadableDatabase();
+        SQLiteDatabase database = mDbHelper.getWritableDatabase();
 
 
         long id = database.insert(ItemEntry.TABLE_NAME, null, values);
@@ -171,7 +173,7 @@ public class InventoryProvider extends ContentProvider {
         }
 
         //Notify all listeners that the data for the URI has changes
-        getContext().getContentResolver().notifyChange(uri, null);
+        Objects.requireNonNull(getContext()).getContentResolver().notifyChange(uri, null);
 
         // Once we know the ID of the new row in the table,
         // return the new URI with the ID appended to the end of it

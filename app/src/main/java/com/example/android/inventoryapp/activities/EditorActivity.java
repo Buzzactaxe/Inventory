@@ -150,7 +150,7 @@ public class EditorActivity extends AppCompatActivity implements LoaderManager.L
             return;
         }
 
-        if (TextUtils.isEmpty(nameString)) {
+        if (TextUtils.isEmpty(supplierPhone)) {
             Toast.makeText(EditorActivity.this, R.string.empty_sup_number, Toast.LENGTH_SHORT).show();
             return;
         }
